@@ -28,7 +28,6 @@ namespace Books.DataAccess.Data
                 );            
 
             modelBuilder.Entity<Product>().HasData(
-
                 new Product
                 {
                     Id = 1,
@@ -113,8 +112,7 @@ namespace Books.DataAccess.Data
                     CategoryId = 3,
                     ImageUrl = ""
                 }
-
-                );
+            );
 
             
         }

@@ -17,12 +17,12 @@ namespace Books.DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0-rc.2.23480.1")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("books.Models.Category", b =>
+            modelBuilder.Entity("Books.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -70,7 +70,7 @@ namespace Books.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("books.Models.Product", b =>
+            modelBuilder.Entity("Books.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -467,7 +467,7 @@ namespace Books.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("books.Models.ApplicationUser", b =>
+            modelBuilder.Entity("Books.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -490,9 +490,9 @@ namespace Books.DataAccess.Migrations
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
-            modelBuilder.Entity("books.Models.Product", b =>
+            modelBuilder.Entity("Books.Models.Product", b =>
                 {
-                    b.HasOne("books.Models.Category", "Category")
+                    b.HasOne("Books.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
